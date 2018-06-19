@@ -1,92 +1,177 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Simple front-end for Tasks application</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&subset=latin-ext" rel="stylesheet">
-</head>
-<body>
-<h1 class="kodilla-heading kodilla-heading--main">Test CRUD operations available in my Tasks App</h1>
 
-<main class="crud container">
-  <section class="datatable">
-    <h2>Add a new task</h2>
-    <form
-            class="datatable__row datatable__row--add"
-            method="POST"
-            action="https://mysterious-dusk-98078.herokuapp.com/v1/tasks"
-            data-task-add-form
-    >
-      <fieldset class="datatable__row-section datatable__row-section--input-section">
-        <label class="datatable__input-label">
-          Task name
-        </label>
-        <input type="text" name="title" placeholder="Insert a task name" required minlength="3">
-      </fieldset>
+  <head>
 
-      <fieldset class="datatable__row-section datatable__row-section--input-section">
-        <label class="datatable__input-label">
-          Task content
-        </label>
-        <textarea name="content" placeholder="Insert task content" required minlength="3"></textarea>
-      </fieldset>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="SlawomirR">
 
-      <fieldset class="datatable__row-section datatable__row-section--button-section">
-        <button type="submit" data-task-add-button class="datatable__button">Add a task</button>
-      </fieldset>
-    </form>
-  </section>
-  <section class="datatable">
-    <h2>Tasks from the API</h2>
-    <div class="datatable__tasks-container" data-tasks-container></div>
-  </section>
-</main>
+    <title>SlawomirR Portfolio Start Page</title>
 
-<div class="template" data-datatable-row-template>
-  <form class="datatable__row" data-task-id="0">
-    <fieldset class="datatable__row-section datatable__row-section--input-section" data-task-name-section>
-      <label class="datatable__input-label">
-        Task name
-      </label>
-      <input type="text" name="title" placeholder="Insert a new task name" data-task-name-input required minlength="3">
-      <p class="datatable__field-value" data-task-name-paragraph></p>
-    </fieldset>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <fieldset class="datatable__row-section datatable__row-section--input-section" data-task-content-section>
-      <label class="datatable__input-label">
-        Task content
-      </label>
-      <textarea name="title" placeholder="Insert new task content" data-task-content-input required minlength="3"></textarea>
-      <p class="datatable__field-value" data-task-content-paragraph></p>
-    </fieldset>
+    <!-- Custom styles for this template -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
 
-    <div class="datatable__row-section-wrapper">
-      <fieldset class="datatable__row-section datatable__row-section--button-section">
-        <button type="button" data-task-submit-update-button class="datatable__button datatable__button--editing ">Submit update</button>
-        <button type="button" data-task-edit-abort-button class="datatable__button datatable__button--editing">Abort update</button>
-        <button type="button" data-task-edit-button class="datatable__button">Edit</button>
-        <button type="button" data-task-delete-button class="datatable__button">Delete</button>
-      </fieldset>
+  </head>
 
-      <fieldset class="datatable__row-section datatable__row-section--trello-section">
-        <select class="datatable__select" name="board-name" data-board-name-select>
-          <option disabled selected>--- select an board ---</option>
-        </select>
-        <select class="datatable__select" name="list-name" data-list-name-select>
-          <option disabled selected>--- select a list ---</option>
-        </select>
-        <button type="button" data-trello-card-creation-trigger class="datatable__button datatable__button--card-creation">
-          Create a card
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="https://github.com/SlawomirR">Start GitHub</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-      </fieldset>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://slawomirr.github.io">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/slawomir-ruloff">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/SlawomirR">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/slawomir-ruloff">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading -->
+      <h1 class="my-4">SlawomirR
+        <small>Portfolio Start Page</small>
+      </h1>
+
+      <!-- Project One -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="https://slawomirr.github.io/Sample_front-end_for--Tasks--app">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="images/Tasks-Heroku_Trello_GitHub-700x300.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>TASKS - REST API with CRUD operations</h3>
+          <p>This project do simple task list management. It is design as REST API that can be found at Heroku service: https://mysterious-dusk-98078.herokuapp.com. It uses Trello service to deal with tasks as cards that can be checked at: https://trello.com/b/r3PFBoTh. Tasks are stored to Heroku's PostgreSQL database through the API using standard CRUD operations. Front-end to test the functionality can be found at: https://slawomirr.github.io/Sample_front-end_for--Tasks--app.</p>
+          <a class="btn btn-primary" href="https://github.com/SlawomirR/Tasks--REST_API_using_CRUD_operations.git">Source Code</a>
+          <a class="btn btn-primary" href="https://slawomirr.github.io/Sample_front-end_for--Tasks--app">Use front-end</a>
+          <br>
+          <br>
+          <a class="btn btn-primary" href="https://trello.com/b/r3PFBoTh/tasks-application">Trello part</a>
+          <a class="btn btn-primary" href="https://mysterious-dusk-98078.herokuapp.com">Heroku part</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Project Two -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="https://github.com/SlawomirR/Library--REST_API_with_CRUD_operations.git">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="images/coming_soon.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>LIBRARY - REST API with CRUD operations</h3>
+          <p>Very early version, still under development. Library - REST API application with CRUD operations; supported H2 database; API documented using Swagger; included very simple webpage with basic information when run locally it's http://localhost:8085; Deployment to cloud service will be soon ...</p>
+          <a class="btn btn-primary" href="https://github.com/SlawomirR/Library--REST_API_with_CRUD_operations.git">View Project</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Project Three -->
+      <div class="row">
+        <div class="col-md-7">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="images/coming_soon.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Project Three</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, temporibus, dolores, at, praesentium ut unde repudiandae voluptatum sit ab debitis suscipit fugiat natus velit excepturi amet commodi deleniti alias possimus!</p>
+          <a class="btn btn-primary" href="#">View Project</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Project Four -->
+      <div class="row">
+
+        <div class="col-md-7">
+          <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3>Project Four</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, quidem, consectetur, officia rem officiis illum aliquam perspiciatis aspernatur quod modi hic nemo qui soluta aut eius fugit quam in suscipit?</p>
+          <a class="btn btn-primary" href="#">View Project</a>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Pagination -->
+      <!--
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+
     </div>
-  </form>
-</div>
+    -->
+    <!-- /.container -->
 
-<script src="jquery-3.3.1.js"></script>
-<script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; SlawomirR 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 
-</body>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
 </html>
