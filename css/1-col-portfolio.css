@@ -17,3 +17,10 @@ body {
 .pagination {
   margin-bottom: 15px;
 }
+
+.row {
+    border: 2px solid red;
+    border-radius: 12px;
+    padding: 5px 5px 5px 5px;
+
+}
